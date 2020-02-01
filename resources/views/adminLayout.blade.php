@@ -6,18 +6,7 @@
 @include('partials._head')
 
 <body>
-    <style>
-        /* Make the image fully responsive */
-        .carousel-inner img {
-          width: 1080px;
-          height: 100%;
-        }
-        </style>
-
-@include('partials._slider')
-
-@include('partials._header')
-
+    @include('partials._headerAdmin')
 @yield('content')
 
 
@@ -36,13 +25,7 @@
             $("#products").replaceWith(data);
         });
     });
-    $("#add").click(function(){
-        var data = $("#addUserForm").serialize();
-        $.post("/admin/users" , data).done(function(data){
-               $("#myModal").modal("hide");
-               $("#users").replaceWith(data);
-        });
-    });
+
 
 </script>
  <script>

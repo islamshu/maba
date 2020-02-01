@@ -29,3 +29,7 @@ Route::get('pdf','ProductController@generatePDF');
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook')->name('fblogin');
 Route::get('login/facebook/callback','Auth\LoginController@handelFacebookCallback')->name('fbcallback');
 
+Route::resource('/admin/users', 'UserController')->middleware(['auth']);
+Route::resource('/admin/products', 'ProductController')->middleware(['auth']);
+Route::resource('/admin/sliders', 'SliderController')->middleware(['auth']);
+

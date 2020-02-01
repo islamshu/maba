@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,8 +30,10 @@ class HomeController extends Controller
             orWhere('title','like', '%' . $request->search . '%');
 
         }) ->latest()->paginate(5);
-
-        return view('products')->with('products' , $product);
+        $slider =Slider::get();
+        return view('products')
+        ->with('products' , $product)
+        ->with('sliders' , $slider);
     }
     public function show($id){
         return view('product')->with('product' , Product::find($id));

@@ -56,7 +56,7 @@ class UserController extends Controller
         // $request_data['image']=$path;
         $user =User::create($request_data);
         $user->attachRole('admin');
-        
+
     }
 
     /**
@@ -97,10 +97,10 @@ class UserController extends Controller
             ]);
 
         $request_data =$request->except(['permissions']);
-        //end of external if
+
         $user->update($request_data);
         $user->syncPermissions($request->permissions);
-            return redirect('/admin/users');
+        return redirect('/admin/users');
 
     }
 

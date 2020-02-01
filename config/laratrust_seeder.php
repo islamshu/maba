@@ -4,6 +4,7 @@ return [
     'role_structure' => [
         'super_admin' => [
             'products' => 'c,r,u,d',
+            'slider' => 'c,r,u,d',
             'users' => 'c,r,u,d',
         ],
         'admin' => []

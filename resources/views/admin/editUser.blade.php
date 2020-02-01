@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('adminLayout')
 @section('content')
 
     <div class="container" style="margin-top:100px">
@@ -77,7 +77,7 @@
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         @php
-                                    $models = ['users', 'products'];
+                                    $models = ['users','products','slider'];
                                     $maps =['create' , 'read' , 'update' , 'delete'];
                          @endphp
                          @foreach ($models as $index=>$model)
@@ -88,11 +88,6 @@
 
 
                       </ul>
-
-
-
-
-
                                 <div class="card-body">
                                     <div class="tab-content">
 

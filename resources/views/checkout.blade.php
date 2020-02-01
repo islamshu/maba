@@ -1,4 +1,4 @@
-﻿@extends('layout')
+﻿@extends('adminlayout')
 @section('content')
 
     <div class="container" style="margin-top:100px">
