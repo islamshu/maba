@@ -1,7 +1,7 @@
 @extends('adminLayout')
 @section('content')
 
-    <div class="container" style="margin-top:100px">
+    <div class="container col-md-8" style="margin-top:100px" >
         <hr />
         <h1 style="display: inline-block;">Sliders</h1>
         {{-- <button type="button" class="btn btn-success float-right">

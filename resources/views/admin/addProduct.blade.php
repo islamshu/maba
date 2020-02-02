@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <div class="container" style="margin-top:100px">
+    <div class="container col-md-8" style="margin-top:100px">
         <br />
         <div class="card">
             <div class="card-body">

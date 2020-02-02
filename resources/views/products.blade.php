@@ -17,13 +17,15 @@
                          src='/images/{{$product->imageURL}}'
                          alt="Card image" />
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{$product->price}}</li>
+                        <li class="list-group-item">{{$product->price}}$</li>
                     </ul>
                     <div class="card-body">
                         @guest
-                        <button type="submit" disabled  class="btn btn-primary ">
+                        <button type="submit" disabled  class="btn btn-primary " alt="you need to login">
                             Add to cart
                         </button>
+
+
                         @else
 
                         <form action="/cart" method="post" style="display: inline"> @csrf

@@ -73,7 +73,7 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        return view ('admin.EditSlider')->with('slider',$slider);
     }
 
     /**
@@ -85,7 +85,19 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        $request->validate([
+            'text'=> 'required',
+            'image' => 'required'
+        ]);
+        $request_data = $request->except(['image']);
+        if($request->image !=null)
+        {
+            $path = $request->image->store('sliders');
+            $slider->image =$path;
+        }
+        $request_data['image']=$path;
+        $slider->update($request_data);
+        return redirect('admin/sliders');
     }
 
     /**
@@ -94,8 +106,9 @@ class SliderController extends Controller
      * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy( $id)
     {
-        //
+        Slider::destroy($id);
+        return redirect('/admin/sliders');
     }
 }

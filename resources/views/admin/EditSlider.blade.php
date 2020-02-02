@@ -8,14 +8,15 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>Add Product</h4>
+                        <h4>Edit Slider</h4>
                         <hr />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="/admin/sliders" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/sliders/{{$slider->id}}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('put')
                             <div class="form-group row">
                                 <label for="text" class="col-4 col-form-label">Text</label>
                                 <div class="col-8">
@@ -23,21 +24,25 @@
                                            name="text"
                                            placeholder="text"
                                            class="form-control here"
-                                           type="text" />
+                                           type="text"
+                                           value="{{$slider->text}}"/>
+
                                     <div class="valid-feedback">Looks good!</div>
 
-                                    <div class="invalid-feedback">Please text is required.</div>
+                                    <div class="invalid-feedback">Please name is required.</div>
                                 </div>
                             </div>
 
+
                             <div class="form-group row">
-                                <label for="image" class="col-4 col-form-label">Image </label>
+                                <label for="time" class="col-4 col-form-label">Image </label>
                                 <div class="col-8">
                                     <input id="image"
                                            name="image"
                                            placeholder="Image Online URL"
                                            class="form-control here"
-                                           type="file" />
+                                           type="file"
+                                           value="{{$slider->image}}"/>
                                     <div class="valid-feedback">Looks good!</div>
                                     <div class="invalid-feedback">
                                         Please Image is required.

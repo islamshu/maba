@@ -16,7 +16,7 @@
             <div class="card-body"><p class="card-text">{!!$product->description!!}</p></div>
             <ul class="list-group list-group-flush">
 
-                <li class="list-group-item">{{$product->price}}</li>
+                <li class="list-group-item">{{$product->price}}$</li>
             </ul>
             <div class="card-body">
                 @guest

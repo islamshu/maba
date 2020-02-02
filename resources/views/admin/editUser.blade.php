@@ -1,7 +1,7 @@
 @extends('adminLayout')
 @section('content')
 
-    <div class="container" style="margin-top:100px">
+    <div class="container col-md-8" style="margin-top:100px">
         <hr />
         <div class="row">
             <div class="col-sm-10"><h1>Edit users</h1></div>

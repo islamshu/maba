@@ -16,7 +16,6 @@
                 <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item"><a href="/" class="nav-link">Products</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
         </ul>
 
         <form action="/" method="GET">
